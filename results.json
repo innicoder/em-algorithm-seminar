@@ -1,245 +1,13 @@
 {
-  "figures": [
-    "figures/linkage_rate.pdf",
-    "figures/staircase.pdf",
-    "figures/gmm_iterations.pdf",
-    "figures/loglik.pdf"
-  ],
-  "linkage": {
-    "counts_y": [
-      125,
-      18,
-      20,
-      34
+  "data": {
+    "name": "Old Faithful",
+    "n": 272,
+    "means_raw": [
+      3.487783088235294,
+      70.8970588235294
     ],
-    "theta0": 0.5,
-    "score_equation": "197 theta^2 - 15 theta - 68 = 0",
-    "mle_closed_form": 0.6268214978709824,
-    "paper_vs_computed": {
-      "E_z_first_step": {
-        "paper": 25,
-        "computed": 25.0
-      },
-      "theta_1": {
-        "paper": 0.6082,
-        "computed": 0.6082474226804123,
-        "exact": "59/97"
-      },
-      "theta_2": {
-        "paper": 0.6243,
-        "computed": 0.6243210503692704
-      },
-      "theta_3": {
-        "paper": 0.6265,
-        "computed": 0.6264888790796673
-      },
-      "theta_4": {
-        "paper": 0.6268,
-        "computed": 0.6267773223473097
-      },
-      "mle": {
-        "paper": 0.6268,
-        "computed": 0.6268214978709824
-      }
-    },
-    "iterates": [
-      {
-        "t": 0,
-        "theta": 0.5,
-        "loglik": -208.4702446566651,
-        "error": -0.1268214978709824,
-        "error_ratio": 0.14645841203883112
-      },
-      {
-        "t": 1,
-        "theta": 0.6082474226804123,
-        "loglik": -205.77981865244772,
-        "error": -0.018574075190570083,
-        "error_ratio": 0.13462029608781947
-      },
-      {
-        "t": 2,
-        "theta": 0.6243210503692704,
-        "loglik": -205.71706417482437,
-        "error": -0.0025004475017119665,
-        "error_ratio": 0.13302370519170814
-      },
-      {
-        "t": 3,
-        "theta": 0.6264888790796673,
-        "loglik": -205.71590792205407,
-        "error": -0.00033261879131507577,
-        "error_ratio": 0.13281126871423765
-      },
-      {
-        "t": 4,
-        "theta": 0.6267773223473097,
-        "loglik": -205.7158874142392,
-        "error": -4.417552367275146e-05,
-        "error_ratio": 0.1327830538362639
-      },
-      {
-        "t": 5,
-        "theta": 0.6268156321100443,
-        "loglik": -205.71588705239287,
-        "error": -5.865760938084108e-06,
-        "error_ratio": 0.132779307377157
-      },
-      {
-        "t": 6,
-        "theta": 0.6268207190193078,
-        "loglik": -205.71588704601277,
-        "error": -7.788516745987906e-07,
-        "error_ratio": 0.13277880977249712
-      },
-      {
-        "t": 7,
-        "theta": 0.6268213944559841,
-        "loglik": -205.7158870459003,
-        "error": -1.0341499834254364e-07,
-        "error_ratio": 0.13277874449315843
-      },
-      {
-        "t": 8,
-        "theta": 0.6268214841396688,
-        "loglik": -205.71588704589828,
-        "error": -1.3731313641685006e-08,
-        "error_ratio": 0.13277873525240538
-      },
-      {
-        "t": 9,
-        "theta": 0.6268214960477559,
-        "loglik": -205.71588704589828,
-        "error": -1.823226458697036e-09,
-        "error_ratio": 0.13277872514243555
-      },
-      {
-        "t": 10,
-        "theta": 0.6268214976288967,
-        "loglik": -205.71588704589826,
-        "error": -2.4208568483174986e-10,
-        "error_ratio": 0.1327787851855113
-      },
-      {
-        "t": 11,
-        "theta": 0.6268214978388386,
-        "loglik": -205.71588704589828,
-        "error": -3.214384314276231e-11,
-        "error_ratio": null
-      },
-      {
-        "t": 12,
-        "theta": 0.6268214978667144,
-        "loglik": -205.71588704589828,
-        "error": -4.268030373566489e-12,
-        "error_ratio": null
-      }
-    ],
-    "dlr_1977_table1_ratios": {
-      "reported": [
-        0.1465,
-        0.1346,
-        0.133,
-        0.1328,
-        0.1328,
-        0.1328
-      ],
-      "computed": [
-        0.14645841203883112,
-        0.13462029608781947,
-        0.13302370519170814,
-        0.13281126871423765,
-        0.1327830538362639,
-        0.132779307377157
-      ]
-    },
-    "autograd": {
-      "score_at_mle": 7.105427357601002e-15,
-      "neg_second_derivative_at_mle": 377.51690039468724
-    },
-    "rate": {
-      "measured_factor_t8": 0.13277873525240538,
-      "fraction_missing_information": 0.1327787337455989,
-      "em_map_slope": 0.13277873378569893,
-      "info_observed": 377.51690039468724,
-      "info_complete": 435.31785379896564,
-      "info_missing": 57.8009534042784
-    }
-  },
-  "theorem_3_1": {
-    "linkage_min_increment": -2.842170943040401e-14,
-    "gmm_runs": 60,
-    "K_values": [
-      2,
-      3
-    ],
-    "starts_per_K": 30,
-    "total_em_iterations": 6410,
-    "min_increment": 7.105427357601002e-12,
-    "decreases_below_1e-11": 0,
-    "smallest_covariance_eigenvalue": 0.0028155016536171884,
-    "limits": {
-      "K=2": [
-        {
-          "loglik": -385.4607,
-          "starts": 30,
-          "smallest_eigenvalue": 0.044178875684827944
-        }
-      ],
-      "K=3": [
-        {
-          "loglik": -369.6366,
-          "starts": 3,
-          "smallest_eigenvalue": 0.0028155016536171884
-        },
-        {
-          "loglik": -374.4107,
-          "starts": 20,
-          "smallest_eigenvalue": 0.028605819013915786
-        },
-        {
-          "loglik": -374.8414,
-          "starts": 7,
-          "smallest_eigenvalue": 0.023839262941151688
-        }
-      ]
-    },
-    "bound": {
-      "max_abs_gap_after_E": 1.1368683772161603e-13,
-      "max_F_minus_l": 1.1368683772161603e-13,
-      "first_iteration": {
-        "loglik_theta0": -1331.4821843362167,
-        "loglik_theta1": -542.9830737056213
-      }
-    },
-    "ridge_1e-6": {
-      "decreases_below_1e-11": 7,
-      "runs_with_decreases": 2,
-      "largest_decrease": 8.519691618857905e-10,
-      "total_em_iterations": 6567
-    }
-  },
-  "gmm": {
-    "data": {
-      "name": "Old Faithful",
-      "n": 272,
-      "means_raw": [
-        3.487783088235294,
-        70.8970588235294
-      ],
-      "source": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/faithful.csv",
-      "standardization": "z-score, population standard deviation"
-    },
-    "responsibility_example": {
-      "paper": [
-        0.731059,
-        0.268941
-      ],
-      "computed": [
-        0.7310585786300049,
-        0.2689414213699951
-      ]
-    },
+    "standardization": "z-score, population sd",
+    "source": "https://vincentarelbundock.github.io/Rdatasets/csv/datasets/faithful.csv",
     "init_standardized": {
       "weights": [
         0.5,
@@ -256,53 +24,141 @@
         ]
       ],
       "covariances": "identity"
-    },
+    }
+  },
+  "m_step_check": {
+    "q_at_m_step": -691.8577616897903,
+    "largest_perturbed_q": -693.2635008135439,
+    "n_perturbations": 20,
+    "noise_scale": 0.05
+  },
+  "hand_example": {
+    "x": [
+      1,
+      2,
+      6,
+      7
+    ],
+    "responsibilities": [
+      [
+        0.9994472213630765,
+        0.0005527786369236
+      ],
+      [
+        0.9241418199787564,
+        0.07585818002124359
+      ],
+      [
+        2.5109990926928177e-08,
+        0.9999999748900089
+      ],
+      [
+        1.6918979223288825e-10,
+        0.9999999998308104
+      ]
+    ],
+    "pi": [
+      0.48089726665525345,
+      0.5191027333447467
+    ],
+    "mu": [
+      1.4804258677593765,
+      6.334135876192954
+    ],
+    "var": [
+      0.24961711706006234,
+      0.9611419933971549
+    ],
+    "loglik_before": -11.368900164011382,
+    "loglik_after": -6.315549133606778
+  },
+  "fit": {
+    "tol": 1e-10,
     "n_iter": 53,
-    "loglik_total": -385.4606956297806,
-    "loglik_per_point": -1.4171349104036053,
-    "one_gaussian_loglik_per_point": -2.003652501829601,
-    "loglik_per_point_t1": -1.9962613003883138,
-    "max_mean_offset_t1": 0.1616844259868004,
-    "max_mean_offset_t1_ceil_2dp": 0.17,
+    "loglik": -385.4606956297806,
+    "loglik_t0": -1331.4821843362167,
+    "loglik_t1": -542.9830737056213,
     "t_half_remaining_gain": 35,
-    "components_original_units": [
-      {
-        "weight": 0.3558728633207436,
-        "mean_eruptions_min": 2.0363884697456687,
-        "mean_waiting_min": 54.478516529106784,
-        "sd_eruptions_min": 0.2629974991672622,
-        "sd_waiting_min": 5.804936082904379,
-        "correlation": 0.28504120241443903,
-        "covariance_min2": [
-          [
-            0.06916768456823409,
-            0.43516774975284866
-          ],
-          [
-            0.43516774975284866,
-            33.69728292660523
-          ]
+    "min_increment": 2.2168933355715126e-11,
+    "min_covariance_eigenvalue": 0.04744512712251798,
+    "weights": [
+      0.3558728633207436,
+      0.6441271366792565
+    ],
+    "means_min": [
+      [
+        2.0363884697456687,
+        54.478516529106784
+      ],
+      [
+        4.289661986480532,
+        79.96811533574461
+      ]
+    ],
+    "covariances_min2": [
+      [
+        [
+          0.06916768456823409,
+          0.43516774975284866
+        ],
+        [
+          0.43516774975284866,
+          33.69728292660523
         ]
-      },
-      {
-        "weight": 0.6441271366792565,
-        "mean_eruptions_min": 4.289661986480532,
-        "mean_waiting_min": 79.96811533574461,
-        "sd_eruptions_min": 0.4122722628991527,
-        "sd_waiting_min": 6.003849505465103,
-        "correlation": 0.38001020793525936,
-        "covariance_min2": [
-          [
-            0.16996841875598806,
-            0.9406091031470007
-          ],
-          [
-            0.9406091031470007,
-            36.04620888427357
-          ]
+      ],
+      [
+        [
+          0.16996841875598806,
+          0.9406091031470007
+        ],
+        [
+          0.9406091031470007,
+          36.04620888427357
         ]
-      }
+      ]
+    ],
+    "means_std": [
+      [
+        -1.2739676079429798,
+        -1.2099182512803683
+      ],
+      [
+        0.7038525076801773,
+        0.668465971930597
+      ]
+    ],
+    "covariances_std": [
+      [
+        [
+          0.05329040147975797,
+          0.02814822485008929
+        ],
+        [
+          0.02814822485008929,
+          0.18299437832743498
+        ]
+      ],
+      [
+        [
+          0.1309525587118765,
+          0.060842000691594886
+        ],
+        [
+          0.060842000691594886,
+          0.1957503102017321
+        ]
+      ]
     ]
+  },
+  "figures": [
+    "figures/em_iterations.pdf",
+    "figures/em_loglik.pdf"
+  ],
+  "fixed_point": {
+    "further_iterations": 200,
+    "max_parameter_change_one_more_step": 0.0,
+    "max_abs_gradient_wrt_means": 5.559996907322784e-13,
+    "loglik": -385.46069562977937
   },
   "sklearn": {
     "version": "1.9.1",
@@ -310,25 +166,25 @@
     "converged": true,
     "tol": 1e-10,
     "reg_covar": 0.0,
-    "max_abs_diff": {
-      "weights": 5.551115123125783e-17,
-      "means": 6.661338147750939e-16,
-      "covariances": 1.3877787807814457e-16,
-      "mean_loglik": 0.0
-    },
-    "per_observation_test_first_t": 51,
-    "ours_n_iter_tol_1e-10": 53,
-    "control": {
-      "tol": 3.676470588235294e-13,
-      "n_iter": 54
-    }
+    "loglik": -385.4606956298028,
+    "abs_difference": 2.2168933355715126e-11
   },
-  "runtime_seconds": 9.23,
+  "random_starts": {
+    "n_starts": 20,
+    "K": 2,
+    "distinct_limits_4dp": [
+      -385.4607
+    ],
+    "best_loglik": -385.4606956297797,
+    "n_iter_min": 10,
+    "n_iter_max": 31
+  },
+  "runtime_seconds": 1.01,
   "versions": {
     "python": "3.14.7",
-    "python_executable": ".venv/bin/python",
     "torch": "2.14.1",
     "numpy": "2.5.3",
     "scikit_learn": "1.9.1"
-  }
+  },
+  "n_checks": 13
 }

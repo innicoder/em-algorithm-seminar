@@ -1,21 +1,17 @@
-# The EM Algorithm: Implementation and Verification
+# The EM Algorithm for Gaussian Mixtures
 
 Seminar project for the PhD course **Machine Learning (20.IDI12)**, Doctoral Academic Studies in Computer Science, Faculty of Sciences and Mathematics, University of Niš.
 Instructor: Prof. Branimir Todorović · Author: Elvir Muslić
 
-The notebook implements the expectation–maximization (EM) algorithm in PyTorch (double precision). It checks its results with 35 assertions, which stop the run if any checked value deviates.
+The notebook fits a two-component Gaussian mixture to the 272 Old Faithful eruptions with the expectation-maximization (EM) algorithm, written in PyTorch in double precision, and reproduces every number, table and figure of the seminar paper. It verifies its results with 13 checks, which stop the run if any checked value deviates.
 
 ## Results
 
-- **Genetic linkage** (Dempster, Laird & Rubin, 1977):
-  - Starting from θ = 0.5, EM converges to θ̂ = (15 + √53809)/394 = 0.6268214979.
-  - The ratio of successive errors settles at 0.13278. This equals the fraction of missing information, I_m / I_c = 57.80 / 435.32.
-- **Gaussian mixture on Old Faithful** (K = 2, 272 eruptions):
-  - Converges in 53 iterations to log-likelihood −385.4607.
-  - scikit-learn 1.9.1 reaches the same fit (difference 0.0) in 52 iterations.
-- **Monotone ascent and multiple limits:**
-  - Across 60 runs (6410 EM iterations), the log-likelihood never decreases beyond rounding.
-  - With K = 3, different starts reach different limits; the best is −369.6366.
+- **One iteration by hand** on x = (1, 2, 6, 7): the responsibilities, weights, means and variances match the paper's table to 1e-4; the step raises the log-likelihood from −11.3689 to −6.3155.
+- **Old Faithful** (K = 2, 272 eruptions, deliberately poor start): EM converges in 53 iterations to log-likelihood −385.4607. The fit separates short eruptions (2.04 min, next wait 54.5 min, weight 0.356) from long ones (4.29 min, wait 80.0 min, weight 0.644).
+- **Checks of the theory:** the log-likelihood never decreases; the weights sum to one and the covariances stay symmetric positive definite after every M-step; the M-step output beats 20 random perturbations in Q; at the fixed point one more EM step changes no parameter (largest change 0) and the gradient with respect to the means is at most 5.6e-13.
+- **scikit-learn 1.9.1** from the same start stops after 52 iterations; the two log-likelihoods differ by 2.2e-11.
+- **20 random starts** all reach the same limit, −385.4607, in 10 to 31 iterations each.
 
 ## Run
 
@@ -25,7 +21,7 @@ python3 -m venv .venv
 .venv/bin/jupyter nbconvert --to notebook --execute --inplace em_project.ipynb
 ```
 
-- Tested with Python 3.14. The reported run took 9.23 s.
+- Tested with Python 3.14. The reported run took 1.01 s.
 - The run rewrites `figures/` and `results.json`.
 
 ## Files
@@ -34,6 +30,6 @@ python3 -m venv .venv
 |---|---|
 | `em_project.ipynb` | the notebook, with outputs |
 | `results.json` | the key numbers written by the run |
-| `figures/` | the four figures |
+| `figures/` | the two figures, `em_iterations.pdf` and `em_loglik.pdf` |
 | `data/faithful.csv` | Old Faithful eruptions, R `datasets::faithful`, from the [Rdatasets](https://vincentarelbundock.github.io/Rdatasets/) collection |
 | `requirements.txt` | pinned package versions |
